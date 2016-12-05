@@ -1,4 +1,5 @@
 from time import sleep
+import fcntl,socket,struct
 import sys
 sys.path.append("..")
 import RPi.GPIO as GPIO
@@ -50,6 +51,14 @@ def rgbLed(rojo,verde,azul):
 #Turn Off Rgb Led
 rgbLed(0,0,0)
 
+def getHwAddr(ifname):
+      s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+      info = fcntl.ioctl(s.fileno(), 0x8927, struct.pack('256s', ifname[:15]))
+      return ':'.join(['%02x' % ord(char) for char in info[18:24]])
+
+print getHwAddr('eth0')
+            
+
 #Declare & init servo var
 def servoSetup():
       global servo
@@ -57,7 +66,6 @@ def servoSetup():
       servo.__init__()
 
       servo.setLedStatus(1, 1)
-      servo.setTorqueStatus(1, 1)
 
 
 def servoRun():
@@ -85,6 +93,8 @@ sleep(1)
 servoRun()
 
 
+
+
 while Run:
       
        print(servo.readPosition(1))
@@ -102,9 +112,6 @@ while Run:
        else:
              print("Azul")
              rgbLed(0,0,1)
-
-
-
 
 
 
