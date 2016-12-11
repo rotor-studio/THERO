@@ -1,5 +1,4 @@
 from time import sleep
-import fcntl,socket,struct
 import sys
 sys.path.append("..")
 import RPi.GPIO as GPIO
@@ -50,14 +49,6 @@ def rgbLed(rojo,verde,azul):
 
 #Turn Off Rgb Led
 rgbLed(0,0,0)
-
-#Read de Mac Adrees for detect new devices
-def getHwAddr(ifname):
-      s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-      info = fcntl.ioctl(s.fileno(), 0x8927, struct.pack('256s', ifname[:15]))
-      return ':'.join(['%02x' % ord(char) for char in info[18:24]])
-
-print getHwAddr('wlan0')
             
 
 #Declare & init servo var
