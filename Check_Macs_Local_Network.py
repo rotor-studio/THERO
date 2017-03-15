@@ -1,6 +1,6 @@
 #Code from: http://rpihome.blogspot.com.es/2015/02/checking-devices-connected-to-lan.html
 
-#Now READ MAC
+#Now READ MAC's FROM TEXT FILE
 
 
 import subprocess
