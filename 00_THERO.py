@@ -1,4 +1,9 @@
 from time import sleep
+<<<<<<< HEAD
+=======
+import sys
+sys.path.append("..")
+>>>>>>> 65e53126bcc4e7020bc6622d29e518f92ff5d295
 import RPi.GPIO as GPIO
 from ax12 import ax12
 import sys
@@ -69,9 +74,12 @@ def rgbLed(rojo,verde,azul):
 
 #Turn Off Rgb Led
 rgbLed(0,0,0)
+<<<<<<< HEAD
 #Init Led Green
 rgbLed(1,0,0)
 ################
+=======
+>>>>>>> 65e53126bcc4e7020bc6622d29e518f92ff5d295
             
 
 #SETUP SERVOS
