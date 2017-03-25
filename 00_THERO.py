@@ -6,12 +6,13 @@ import os
 import subprocess
 
 #GPIO SetUp
-GPIO.cleanup()
+#GPIO.cleanup()
 
 
 #GLOBAL VARIABLES
-Run= True
-servoUp= False
+Apache = False;
+Run = True
+servoUp = False
 redPin=16
 greenPin=20
 bluePin=21
@@ -19,7 +20,9 @@ Position=0
 red=0
 green=0
 blue=0
-connect=True;
+ipRangeInit=1;
+ipRangeEnd=20;
+
 #################
 
 #SETUP GPIO
@@ -88,11 +91,11 @@ def servoTestRun():
       sleep(1) 
 
       print("movimiento 2")
-      servo.moveSpeed(1,250,80)
+      servo.moveSpeed(1,200,80)
       sleep(1)
       
       print("movimiento 3")
-      servo.move(1,0)
+      servo.move(0,0)
       sleep(1)
       
       servo.setTorqueStatus(1,0)
@@ -118,14 +121,25 @@ def servoMacRun(mov):
       servo.setTorqueStatus(1,0)
 
 def mode(mod):
-      if (mod==0):
-           subprocess.call(["sudo","service","apache2","stop"])
-           print "Apagamos Apache"
-           
-      if (mod==2):
-           subprocess.call(["sudo","service","apache2","start"])
-           print "Encendemos Apache"
 
+      global Apache
+      
+      if (mod==0) and (Apache==False):
+           subprocess.call(["sudo","service","apache2","stop"])
+           print ("Apagamos Apache")
+           sleep(1)
+           print ("Permitimos internet Wifi")
+           Apache=True
+           
+           
+      if (mod==2) and Apache:
+           subprocess.call(["sudo","service","apache2","start"])
+           print ("Encendemos Apache")
+           Apache=False
+           sleep(1)
+           print ("Desconectamos internet")
+           
+ 
 
 #GENERAL CODE
 while Run:
@@ -165,18 +179,18 @@ while Run:
 
               file.close()
 
-              print "Buscando..."
+              print ("Buscando...")
               
-              result=subprocess.check_output("sudo nmap -sn 192.168.0.180-200", shell=True)
+              result=subprocess.check_output("sudo nmap -sn 172.24.1.50-70", shell=True)
             
               for i in range(1,len(x)):
                       mac = x[i]
-                      print ", ".join(mac)
+                      print (", ".join(mac))
   
                       if (", ".join(mac) in result) and (status==0): # At the first connection sends a welcome message Answer("Welcome back!")
                            status=1
                          
-                           print "hola que tal, como estamos?..."
+                           print ("hola que tal, como estamos?...")
                            servoMacRun(750)
                            rgbLed(0,1,0)
             
@@ -184,20 +198,20 @@ while Run:
                       if (", ".join(mac) in result) and (status==1): # If phone connected keeps the counter reset
                           counter=0
 
-                          print "conectado"
+                          print ("conectado")
 
                  
                       if (", ".join(mac) not in result) and (status==1): # If phone is not connected increase the counter
                           counter=counter+1
 
-                          print "no conectado"
+                          print ("no conectado")
                           
                  
                       if (status==1) and (counter>4): # Wait for the phone to stay disconnected for a while
                           status=0
                           counter=0
 
-                          print "esperando"
+                          print ("esperando")
               
   
 
