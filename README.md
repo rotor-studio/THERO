@@ -1,8 +1,9 @@
 ######THERO#######
 
-Python code for THERO core: http://www.romantorre.net/tag/next-things/
+This repository contains all of the research in code & digital fabrication parts. 
+The project: http://www.romantorre.net/portfolio-item/thero/
 
-Now in development. I will uploading step a step all the diferent modules.
+Some of files are notes or trainings to learn python code with the intention of share our steps on the design of the project. 
 
 
 Now:
