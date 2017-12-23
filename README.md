@@ -1,4 +1,4 @@
-######THERO#######
+
 
 This repository contains all of the research in code & digital fabrication parts. 
 The project: http://www.romantorre.net/portfolio-item/thero/
