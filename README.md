@@ -24,6 +24,8 @@ Important note:
 THERO is not in production phase, it is only a prototype. Surely there are parts that are improvable
 or directly wrong. I hope that at least it serves to understand how we made our prototypes work.
 
+Román Torre & Ángeles Angulo.
+
 Questions, issues, money,etc: roman[@]rotor-studio.net
 
-Finding the right license...
+No license is required, just name us when you wanna share the project. 
