@@ -1,5 +1,3 @@
-######THERO#######
-
 A collection of links that inspired the creation and design process of THERO (http://www.romantorre.net/portfolio-item/thero/)
 
 
@@ -174,6 +172,13 @@ https://theintercept.com/2016/08/08/facebook-removes-potential-evidence-of-polic
 https://www.eff.org/
 
 https://www.tacticaltech.org/
+
+
+Román Torre & Ángeles Angulo.
+
+Questions, issues, money,etc: roman[@]rotor-studio.net
+
+No license is required, just name us when you wanna share the project.
 
 
 
