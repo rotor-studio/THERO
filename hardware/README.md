@@ -30,8 +30,6 @@ THERO is not in production phase, it is only a prototype. Surely there are parts
 or directly wrong. I hope that at least it serves to understand how we made our prototype work.
 
 
-
-
 This repository contains all of the research in code & digital fabrication parts. 
 The project: http://www.romantorre.net/portfolio-item/thero/
 
