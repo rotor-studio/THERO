@@ -22,18 +22,17 @@ List of hardware:
 
 3x Resistors 220Ω
 
+Shield:
+https://github.com/rotor-studio/THERO/blob/master/hardware/shield.png
 
 More info of this step (Spanish): http://www.romantorre.net/prototipo-electronica/
 
 Important note:
 THERO is not in production phase, it is only a prototype. Surely there are parts that are improvable
-or directly wrong. I hope that at least it serves to understand how we made our prototype work.
+or directly wrong. I hope that at least it serves to understand how we made our prototype work
 
-
-This repository contains all of the research in code & digital fabrication parts. 
-The project: http://www.romantorre.net/portfolio-item/thero/
+Román Torre & Ángeles Angulo.
 
 Questions, issues, money,etc: roman[@]rotor-studio.net
 
-
-Finding the right license...
+No license is required, just name us when you wanna share the project.
